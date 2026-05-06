@@ -3,8 +3,10 @@ import { useState } from "react";
 
 import Link from "next/link";
 import DataJson from "@/utils/data.json";
+import { useRouter } from 'next/navigation';
 
 export default function UsersPage() {
+  const router = useRouter();
   const [search, setSearch] = useState("");
   const filtered = DataJson.filter((user) => {
     const query = search.toLowerCase();
@@ -16,6 +18,7 @@ export default function UsersPage() {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen text-black">
+      <button onClick={() => router.back()} className="mb-4 px-4 py-2 bg-gray-200 rounded">Go Back</button>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Users</h1>
 
@@ -68,6 +71,11 @@ export default function UsersPage() {
           </div>
         ))}
       </div>
+      {filtered.length === 0 && search && (
+        <div className="text-center text-gray-500 mt-6">
+          Not found
+        </div>
+      )}
     </div>
   );
 }

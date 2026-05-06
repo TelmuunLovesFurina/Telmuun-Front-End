@@ -1,6 +1,12 @@
+'use client';
+import { useRouter } from 'next/navigation';
+
 export default function ContentPage() {
+    const router = useRouter();
+
     return ( 
-        <div class="min-h-screen bg-slate-900 text-white flex p-6 gap-6">
+        <div className="min-h-screen bg-slate-900 text-white flex p-6 gap-6">
+
 
   <div class="w-40 bg-slate-800 rounded-2xl p-6 flex flex-col gap-8">
     <div class="text-2xl font-bold">☁</div>
@@ -36,6 +42,10 @@ export default function ContentPage() {
           <h2 class="text-6xl font-bold mt-4">31°</h2>
         </div>
         <div class="text-8xl">☀</div>
+      </div>
+
+      <div class="flex justify-center">
+        <button onClick={() => router.back()} className="px-4 py-2 bg-slate-700 text-white rounded">Go Back</button>
       </div>
 
       <div class="bg-slate-800 rounded-2xl p-6">

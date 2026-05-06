@@ -1,70 +1,186 @@
-export default function ContactPage() {
-    return (
-        <div className="h-screen w-screen bg-black flex  justify-around items-center">
-            <div className="w-1/10 h-full">
-                <a href="" className="w-36 h-16 text-blue-400"> Back</a>
-            </div>
-            
-            <div className="w-7/10 h-4/5 bg-white flex ">
-                <div className="w-16 h-full bg-white">
-                    <img src="https://media.licdn.com/dms/image/v2/D560BAQEEMW9WWllJQQ/company-logo_200_200/company-logo_200_200/0/1715012998326/logodotcom_logo?e=2147483647&v=beta&t=_NWc6aYWSqq5hIKCc9gX66KLMr59x1sYFIm0-FJaIP4" alt="contact-icon" className="w-12 h-12 mt-4 ml-2"/>
-                </div>
-                <div className="w-[45%] h-full flex flex-col border-2 border-gray-300">
-                    <div className="w-full h-1/2 flex flex-col justify-center items-center text-8xl font-bold text-black ml-2">
-                        Let's get in touch
-                    </div>
-                    <div className="w-full h-[40%] ">
-                        <div className="w-full h-2/5 text-5xl  text-black flex items-center justify-center ml-2">
-                            Don't be afraid to say hello to us!
-                        </div>
-                        <div className="w-full h-1/5 flex flex-col justify-center ml-4">
-                            <p className="text-lg text-gray-400 ">Phone:</p>
-                            <p className="text-xl text-black ">(+976)88676941</p>
-                        </div>
-                        <div className="w-full h-1/5 flex flex-col justify-center ml-4">
-                            <p className="text-lg text-gray-400 ">Email:</p>
-                            <p className="text-xl text-black ">(+976)99676941</p>
-                        </div>
-                        <div className="w-full h-1/5 flex flex-col justify-center ml-4">
-                            <p className="text-lg text-gray-400 ">Office</p>
-                            <p className="text-xl text-black ">Ulaanbaatar KHAN-UUL district </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-[45%] h-full bg-white border-2 border-gray-300">
-                    <div className="w-full h-1/2 flex flex-col">
-                        <div className="w-full h-1/2 flex justify-around m-2">
-                            <div className="text-gray-400 text-lg" > Home</div>
-                            <div className="text-gray-400 text-lg" > Service</div>
-                            <div className="text-gray-400 text-lg" > Technology</div>
-                            <div className="text-gray-400 text-lg" > Get in touch</div>
-                            <div className="w-16 h-8 bg-yellow-300 text-gray-400 text-lg flex items-center justify-center">Login</div>
-                        </div>
-                        <div className="w-full h-1/2 flex justify-center mt-16">
-                            <img src="https://www.mydoorsign.com/img/lg/L/right-arrow-door-label-lb-2117-r.png " className="ml-4 w-1/2 h-16"></img>
-                            <div className="text-2xl text-gray-400  ml-4">Great we are excited to hear from you and let's start something</div>
-                        </div>
-                    </div>
-                    <div className="w-full h-1/2 flex bg-sky-300 flex-col">
-                        <div className="w-full h-1/5 text-white text-3xl ml-4 flex items-center">Contact Us</div>
-                        <div className="w-full h-1/5 flex  flex-col justify-center">
-                            <div className=" text-white text-xl ml-8"> Name:</div>
-                            <input className=" w-48 rounded-md mb-4 ml-8 bg-white text-black"/>
-                        </div>
-                        <div className="w-full h-1/5">
-                            <div className=" text-white text-xl ml-8"> Email:</div>
-                            <input className="w-48 rounded-md mb-4 ml-8 bg-white text-black"/>
-                        </div>
-                        <div className="w-full h-1/5">
-                            <div className=" text-white text-xl ml-8"> Phone:</div>
-                            <input className="w-48 rounded-md mb-4 ml-8 bg-white text-black"/>
-                        </div>
-                        <button className="w-24 h-10 bg-blue-400 text-white text-m rounded-2xl ml-8 mt-2">Submit</button>
-                    </div>
-                </div>
-                <div className="w-[8%] h-full"></div>
-            </div>
-        </div>
-    )
+'use client';
 
+import { useRouter } from 'next/navigation';
+
+export default function ContactPage() {
+    const router = useRouter();
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
+            <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/70 border-b border-slate-700">
+                <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+                    <h1 className="text-3xl font-bold tracking-tight">
+                        Contact Me
+                    </h1>
+
+                    <button
+                        onClick={() => router.back()}
+                        className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 transition-all duration-200 shadow-lg hover:scale-105"
+                    >
+                        ← Go Back
+                    </button>
+                </div>
+            </header>
+
+            <main className="py-16 px-6">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+                    <div className="space-y-8">
+                        <div>
+                            <h2 className="text-5xl font-extrabold leading-tight mb-5">
+                                Let&apos;s Get In Touch
+                            </h2>
+
+                            <p className="text-slate-300 text-lg leading-relaxed max-w-xl">
+                                I&apos;m always open to meeting new people,
+                                collaborating on projects, or simply having
+                                a conversation. Feel free to send a message anytime.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-5">
+
+                            <div className="group bg-slate-900/60 backdrop-blur-xl border border-slate-700 hover:border-sky-500 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-2xl">
+                                        📞
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold">
+                                            Phone
+                                        </h3>
+                                        <p className="text-slate-400">
+                                            (+976) 88676941
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="group bg-slate-900/60 backdrop-blur-xl border border-slate-700 hover:border-purple-500 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl">
+                                        ✉️
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold">
+                                            Email
+                                        </h3>
+                                        <p className="text-slate-400">
+                                            telmuun@example.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="group bg-slate-900/60 backdrop-blur-xl border border-slate-700 hover:border-emerald-500 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+                                        📍
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold">
+                                            Location
+                                        </h3>
+                                        <p className="text-slate-400">
+                                            Ulaanbaatar, Khan-Uul District
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="group bg-slate-900/60 backdrop-blur-xl border border-slate-700 hover:border-orange-500 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-2xl">
+                                        🎓
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold">
+                                            School
+                                        </h3>
+                                        <p className="text-slate-400">
+                                            NHS — Class 11A
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-slate-900/70 backdrop-blur-2xl border border-slate-700 rounded-3xl p-8 shadow-2xl">
+                        <div className="mb-8">
+                            <h3 className="text-3xl font-bold mb-2">
+                                Send a Message
+                            </h3>
+
+                            <p className="text-slate-400">
+                                Fill out the form below and I&apos;ll reply soon.
+                            </p>
+                        </div>
+
+                        <form className="space-y-6">
+
+                            <div>
+                                <label className="block mb-2 text-sm text-slate-300">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Your name"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/30 outline-none transition-all text-white placeholder-slate-500"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block mb-2 text-sm text-slate-300">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    placeholder="your.email@example.com"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30 outline-none transition-all text-white placeholder-slate-500"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block mb-2 text-sm text-slate-300">
+                                    Phone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    placeholder="Your phone number"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/30 outline-none transition-all text-white placeholder-slate-500"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block mb-2 text-sm text-slate-300">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    rows={5}
+                                    placeholder="Tell me what’s on your mind..."
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 outline-none transition-all text-white placeholder-slate-500 resize-none"
+                                />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <footer className="border-t border-slate-700 mt-10">
+                <div className="max-w-6xl mx-auto px-6 py-6 text-center text-slate-500">
+                    © 2026 Telmuun — Designed with Next.js & Tailwind CSS
+                </div>
+            </footer>
+        </div>
+    );
 }
